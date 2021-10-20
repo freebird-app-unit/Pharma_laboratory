@@ -9,6 +9,8 @@ export { default as HomeScreen } from './HomeScreen'
 export { default as AcceptedScreen } from './AcceptedScreen'
 export { default as SamplesScreen } from './SamplesScreen'
 export { default as CompletedScreen } from './CompletedScreen'
+export { default as HomeAdminScreen } from './HomeAdminScreen'
+export { default as BookAppointmentScreen } from './BookAppointmentScreen'
 
 
 

@@ -11,6 +11,7 @@ export const theme = {
     blackBG:'#343434',
     textColor:'#343434',
     buttonColor:'#06A0FD',
+    textGray:'#727272'
     
   },
   searchStyle:{

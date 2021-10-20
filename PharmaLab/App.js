@@ -15,6 +15,7 @@ import {
   AcceptedScreen,
   SamplesScreen,
   CompletedScreen,
+  BookAppointmentScreen
 } from './src/screens';
 
 
@@ -54,6 +55,7 @@ const App = () => {
 
             <Stack.Screen name="CompletedScreen" component={CompletedScreen} />
 
+            <Stack.Screen name="BookAppointmentScreen" component={BookAppointmentScreen} />
             
         </Stack.Navigator>
       </NavigationContainer>

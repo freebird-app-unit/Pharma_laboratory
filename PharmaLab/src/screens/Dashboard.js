@@ -15,7 +15,7 @@ import Background from '../components/Background';
 import Header from '../components/Header';
 import {Appbar} from 'react-native-paper';
 import Spinner from 'react-native-loading-spinner-overlay';
-import {HomeScreen,AcceptedScreen,SamplesScreen,CompletedScreen} from '../screens';
+import {HomeScreen,AcceptedScreen,SamplesScreen,CompletedScreen,HomeAdminScreen,BookAppointmentScreen} from '../screens';
 
 import { Card } from 'react-native-elements'
 
@@ -30,6 +30,7 @@ import SampleIcon from '../assets/SampleIcon';
 import CompletedIcon from '../assets/CompletedIcon';
 import AcceptedIcon from '../assets/AcceptedIcon';
 import HomeIcon from '../assets/HomeIcon';
+import BookAppointIcon from '../assets/BookAppointIcon';
 
 
 class Dashboard extends Component {
@@ -62,7 +63,14 @@ class Dashboard extends Component {
         isSamples:false,
         isCompleted:false
       });
+
+     
     
+    
+  }
+
+  onclickBookAppointment=()=>{
+    this.props.navigation.navigate('BookAppointmentScreen');
   }
   
   onclickAccepted =()=>{
@@ -113,7 +121,9 @@ class Dashboard extends Component {
             visible={this.state.spinner}
             color="#085cab" />
 
-              {this.state.isHome && <HomeScreen/>}
+              {this.state.isHome && <HomeAdminScreen/>}
+
+              
 
               {this.state.isAccepted && <AcceptedScreen/>}
 
@@ -129,12 +139,12 @@ class Dashboard extends Component {
                     <View style={{alignItems:'center'}}>
                     <Home />
                     <Text style={{fontSize: 10,
-    fontFamily: "Poppins-Regular",color:'black'}}>Home</Text>
+                                  fontFamily: "Poppins-Regular",color:'black'}}>Home</Text>
                     </View>
                   </TouchableOpacity>
 
 
-                 <TouchableOpacity style={{marginTop:5,marginLeft:40}} onPress={this.onclickAccepted}>
+                 <TouchableOpacity style={{marginTop:5,marginLeft:30}} onPress={this.onclickAccepted}>
                  <View style={{alignItems:'center'}}>
                         <AcceptedIcon
                           />
@@ -143,7 +153,17 @@ class Dashboard extends Component {
                     </View>
                   </TouchableOpacity>
 
-                <TouchableOpacity style={{marginTop:5,marginLeft:40}} onPress={this.onclickSamples}>
+                  <TouchableOpacity style={{marginTop:-12,marginLeft:12,marginRight:12}} onPress={this.onclickBookAppointment}>
+                <View style={{alignItems:'center', width:50,height:50,backgroundColor:'white',
+          borderBottomLeftRadius:25,borderBottomRightRadius:25,borderTopLeftRadius:25,borderTopRightRadius:25}}>
+                      <BookAppointIcon
+                      />
+
+                    </View>
+                  </TouchableOpacity>
+
+
+                <TouchableOpacity style={{marginTop:5,marginLeft:0}} onPress={this.onclickSamples}>
                 <View style={{alignItems:'center'}}>
                       <SampleIcon
                       />
@@ -153,7 +173,7 @@ class Dashboard extends Component {
                     </View>
                   </TouchableOpacity>
                   
-                  <TouchableOpacity style={{marginTop:5,marginLeft:40}} onPress={this.onclickCompleted}>
+                  <TouchableOpacity style={{marginTop:5,marginLeft:30}} onPress={this.onclickCompleted}>
                   <View style={{alignItems:'center'}}>
                       <CompletedIcon
                       />
